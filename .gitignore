@@ -1,0 +1,16 @@
+﻿# Node.js
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+
+# Uploads & logs
+backend/uploads/*
+backend/logs/*
+!backend/uploads/.gitkeep
+!backend/logs/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db

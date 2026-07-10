@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Great Villa — A luxury retreat where elegance meets nature. Book your exclusive stay today." />
+  <title>Great Villa | Luxury Retreat</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="frontend/css/style.css" />
+  <link rel="stylesheet" href="frontend/css/home.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">GREAT<span>VILLA</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#booking" class="nav-btn">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Luxury Villa Experience</div>
+      <h1>Where <em>Elegance</em><br>Meets Nature</h1>
+      <p>
+        Nestled in breathtaking surroundings, Great Villa offers a sanctuary of
+        unparalleled luxury — private pools, world-class dining, and timeless serenity.
+      </p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary" id="hero-book-btn">Reserve Your Stay</a>
+        <a href="#rooms" class="btn-outline" id="hero-explore-btn">Explore Rooms</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num" data-target="12" data-suffix="+">0+</div>
+          <div class="stat-label">Luxury Rooms</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="5" data-suffix=" ★">0 ★</div>
+          <div class="stat-label">Star Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="500" data-suffix="+">0+</div>
+          <div class="stat-label">Happy Guests</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="8" data-suffix=" Acres">0 Acres</div>
+          <div class="stat-label">Private Estate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap fade-up">
+          <img src="frontend/public/images/villa_hero.png" alt="Great Villa exterior view" />
+          <div class="about-gold-frame"></div>
+          <div class="about-badge">
+            <div class="about-badge-num">Est.</div>
+            <div class="about-badge-text">2020</div>
+          </div>
+        </div>
+        <div class="about-content fade-up">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">A Legacy of<br>Timeless Luxury</h2>
+          <div class="gold-line"></div>
+          <p>
+            Great Villa was born from a shared dream — to create a place where every detail
+            whispers perfection. Our estate spans lush acres of curated landscape, offering
+            complete privacy and an immersive experience with nature.
+          </p>
+          <p>
+            Each corner of the villa has been designed by award-winning architects, blending
+            traditional craftsmanship with modern luxury. We believe a stay here should feel
+            less like a holiday and more like coming home — to the finest version of home.
+          </p>
+          <div class="features-list">
+            <div class="feature-item">Private Infinity Pool</div>
+            <div class="feature-item">Gourmet Kitchen</div>
+            <div class="feature-item">Personal Butler</div>
+            <div class="feature-item">Spa &amp; Wellness</div>
+            <div class="feature-item">Helipad Access</div>
+            <div class="feature-item">24/7 Concierge</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROOMS ===== -->
+  <section class="rooms" id="rooms">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-label">Accommodations</div>
+        <h2 class="section-title">Our Finest Rooms &amp; Suites</h2>
+      </div>
+      <div class="rooms-grid">
+
+        <div class="room-card fade-up" id="room-garden-suite">
+          <div class="room-img">
+            <div class="room-icon">🌿</div>
+            <div class="room-tag">Popular</div>
+          </div>
+          <div class="room-body">
+            <h3>Garden Suite</h3>
+            <p>Wake up to the scent of jasmine. A sprawling suite opening directly onto private garden terraces.</p>
+            <div class="room-meta">
+              <div class="room-price">₹12,000 <span>/ night</span></div>
+              <a href="frontend/pages/rooms.html" class="room-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card fade-up" id="room-royal-villa">
+          <div class="room-img">
+            <div class="room-icon">👑</div>
+            <div class="room-tag">Signature</div>
+          </div>
+          <div class="room-body">
+            <h3>Royal Villa Suite</h3>
+            <p>Our flagship suite — a private villa within the villa, with a personal plunge pool and sky deck.</p>
+            <div class="room-meta">
+              <div class="room-price">₹28,000 <span>/ night</span></div>
+              <a href="frontend/pages/rooms.html" class="room-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card fade-up" id="room-poolside">
+          <div class="room-img">
+            <div class="room-icon">🏊</div>
+            <div class="room-tag">New</div>
+          </div>
+          <div class="room-body">
+            <h3>Poolside Cabana</h3>
+            <p>Step out of your room and into the water. Exclusive pool-access rooms for the ultimate escape.</p>
+            <div class="room-meta">
+              <div class="room-price">₹18,500 <span>/ night</span></div>
+              <a href="frontend/pages/rooms.html" class="room-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AMENITIES ===== -->
+  <section class="amenities" id="amenities">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-label">Experiences</div>
+        <h2 class="section-title">World-Class Amenities</h2>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card fade-up" id="amenity-pool">
+          <div class="amenity-icon">🏊‍♂️</div>
+          <h4>Infinity Pool</h4>
+          <p>An Olympic-length infinity pool overlooking the valley, open sunrise to midnight.</p>
+        </div>
+        <div class="amenity-card fade-up" id="amenity-spa">
+          <div class="amenity-icon">🧖‍♀️</div>
+          <h4>Spa &amp; Wellness</h4>
+          <p>Signature treatments, aromatherapy, and yoga sessions with our expert therapists.</p>
+        </div>
+        <div class="amenity-card fade-up" id="amenity-dining">
+          <div class="amenity-icon">🍽️</div>
+          <h4>Fine Dining</h4>
+          <p>Private chef-curated menus featuring local ingredients and international cuisine.</p>
+        </div>
+        <div class="amenity-card fade-up" id="amenity-events">
+          <div class="amenity-icon">🎊</div>
+          <h4>Private Events</h4>
+          <p>Host weddings, celebrations, and corporate retreats in our exclusive event spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING CTA ===== -->
+  <section class="booking-cta" id="booking">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-label">Reservations</div>
+        <h2 class="section-title">Ready for an<br><em style="color:var(--gold-light)">Unforgettable</em> Stay?</h2>
+        <div class="gold-line" style="margin: 1.5rem auto;"></div>
+        <p>Availability is limited. Secure your dates today and let us craft your perfect escape.</p>
+        <div class="cta-actions">
+          <a href="mailto:bookings@greatvilla.com" class="btn-primary" id="cta-email-btn">Email Us to Book</a>
+          <a href="tel:+911234567890" class="btn-outline" id="cta-call-btn">+91 12345 67890</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>GREAT<span>VILLA</span></h3>
+          <p>A private luxury estate offering world-class hospitality, breathtaking landscapes, and memories that last a lifetime.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="frontend/pages/gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Stay</h4>
+          <ul>
+            <li><a href="frontend/pages/booking.html">Booking</a></li>
+            <li><a href="frontend/pages/rooms.html">Suites</a></li>
+            <li><a href="frontend/pages/amenities.html">Amenities</a></li>
+            <li><a href="frontend/pages/about.html">Our Story</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@greatvilla.com">hello@greatvilla.com</a></li>
+            <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+            <li><a href="frontend/pages/contact.html">Contact Page</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Great Villa. All rights reserved.</span>
+        <span>Built with ❤️ by the Great Villa Team</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="frontend/js/main.js"></script>
+</body>
+</html>
