@@ -1,0 +1,21 @@
+:root {
+  --gold: #c9a227;
+  --gold-light: #e5c65c;
+}
+
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+html {
+  scroll-behavior:smooth;
+}
