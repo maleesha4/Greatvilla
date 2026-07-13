@@ -5,17 +5,17 @@ export declare class RoomsService {
     constructor(prisma: PrismaService);
     getAllRooms(query: {
         roomTypeId?: string;
-        minPrice?: number;
-        maxPrice?: number;
-        capacity?: number;
+        minPrice?: any;
+        maxPrice?: any;
+        capacity?: any;
         status?: string;
     }): Promise<({
         roomType: {
             id: string;
-            createdAt: Date;
-            updatedAt: Date;
             name: string;
             description: string | null;
+            createdAt: Date;
+            updatedAt: Date;
         };
         images: {
             id: string;
@@ -27,32 +27,63 @@ export declare class RoomsService {
         }[];
         facilities: {
             id: string;
-            createdAt: Date;
-            updatedAt: Date;
             name: string;
             description: string | null;
+            createdAt: Date;
+            updatedAt: Date;
             icon: string | null;
         }[];
         amenities: {
             id: string;
-            createdAt: Date;
-            updatedAt: Date;
             name: string;
             description: string | null;
+            createdAt: Date;
+            updatedAt: Date;
             icon: string | null;
         }[];
     } & {
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        roomTypeId: string;
         pricePerNight: number;
         capacity: number;
         status: string;
-        roomTypeId: string;
+        createdAt: Date;
+        updatedAt: Date;
     })[]>;
     getRoomById(id: string): Promise<{
+        roomType: {
+            id: string;
+            name: string;
+            description: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+        };
+        images: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            url: string;
+            caption: string | null;
+            roomId: string | null;
+        }[];
+        facilities: {
+            id: string;
+            name: string;
+            description: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+            icon: string | null;
+        }[];
+        amenities: {
+            id: string;
+            name: string;
+            description: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+            icon: string | null;
+        }[];
         reviews: ({
             user: {
                 id: string;
@@ -68,82 +99,51 @@ export declare class RoomsService {
             rating: number;
             comment: string | null;
         })[];
-        roomType: {
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            name: string;
-            description: string | null;
-        };
-        images: {
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            url: string;
-            caption: string | null;
-            roomId: string | null;
-        }[];
-        facilities: {
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            name: string;
-            description: string | null;
-            icon: string | null;
-        }[];
-        amenities: {
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            name: string;
-            description: string | null;
-            icon: string | null;
-        }[];
     } & {
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        roomTypeId: string;
         pricePerNight: number;
         capacity: number;
         status: string;
-        roomTypeId: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     createRoom(dto: CreateRoomDto): Promise<{
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        roomTypeId: string;
         pricePerNight: number;
         capacity: number;
         status: string;
-        roomTypeId: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     updateRoom(id: string, dto: Partial<CreateRoomDto> & {
         status?: string;
     }): Promise<{
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        roomTypeId: string;
         pricePerNight: number;
         capacity: number;
         status: string;
-        roomTypeId: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     deleteRoom(id: string): Promise<{
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        roomTypeId: string;
         pricePerNight: number;
         capacity: number;
         status: string;
-        roomTypeId: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     getRoomTypes(): Promise<({
         _count: {
@@ -151,35 +151,35 @@ export declare class RoomsService {
         };
     } & {
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        createdAt: Date;
+        updatedAt: Date;
     })[]>;
     createRoomType(data: {
         name: string;
         description?: string;
     }): Promise<{
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     getAmenities(): Promise<{
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        createdAt: Date;
+        updatedAt: Date;
         icon: string | null;
     }[]>;
     getFacilities(): Promise<{
         id: string;
-        createdAt: Date;
-        updatedAt: Date;
         name: string;
         description: string | null;
+        createdAt: Date;
+        updatedAt: Date;
         icon: string | null;
     }[]>;
 }

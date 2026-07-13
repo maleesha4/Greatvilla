@@ -8,21 +8,35 @@ export class RoomsService {
 
   async getAllRooms(query: {
     roomTypeId?: string;
-    minPrice?: number;
-    maxPrice?: number;
-    capacity?: number;
+    minPrice?: any;
+    maxPrice?: any;
+    capacity?: any;
     status?: string;
   }) {
     const where: any = {};
 
-    if (query.roomTypeId) where.roomTypeId = query.roomTypeId;
-    if (query.capacity) where.capacity = { gte: Number(query.capacity) };
-    if (query.status) where.status = query.status;
+    if (query.roomTypeId && query.roomTypeId !== 'undefined' && query.roomTypeId !== '') {
+      where.roomTypeId = query.roomTypeId;
+    }
+    
+    if (query.status && query.status !== 'undefined' && query.status !== '') {
+      where.status = query.status;
+    }
 
-    if (query.minPrice !== undefined || query.maxPrice !== undefined) {
+    if (query.capacity) {
+      const cap = Number(query.capacity);
+      if (!isNaN(cap)) {
+        where.capacity = { gte: cap };
+      }
+    }
+
+    const min = query.minPrice ? Number(query.minPrice) : NaN;
+    const max = query.maxPrice ? Number(query.maxPrice) : NaN;
+
+    if (!isNaN(min) || !isNaN(max)) {
       where.pricePerNight = {};
-      if (query.minPrice !== undefined) where.pricePerNight.gte = Number(query.minPrice);
-      if (query.maxPrice !== undefined) where.pricePerNight.lte = Number(query.maxPrice);
+      if (!isNaN(min)) where.pricePerNight.gte = min;
+      if (!isNaN(max)) where.pricePerNight.lte = max;
     }
 
     return this.prisma.room.findMany({
