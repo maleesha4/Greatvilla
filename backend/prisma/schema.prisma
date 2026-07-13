@@ -1,0 +1,156 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Stored as String. Expected values: "USER" | "ADMIN"
+// Stored as String. Expected values: "AVAILABLE" | "BOOKED" | "MAINTENANCE"
+// Stored as String. Expected values: "PENDING" | "CONFIRMED" | "CANCELLED"
+// Stored as String. Expected values: "PENDING" | "COMPLETED" | "FAILED"
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  password      String
+  firstName     String
+  lastName      String
+  phone         String?
+  role          String         @default("USER") // "USER" | "ADMIN"
+  bookings      Booking[]
+  reviews       Review[]
+  notifications Notification[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model RoomType {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  rooms       Room[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Room {
+  id            String         @id @default(uuid())
+  name          String
+  description   String?
+  roomTypeId    String
+  roomType      RoomType       @relation(fields: [roomTypeId], references: [id])
+  pricePerNight Float
+  capacity      Int
+  status        String         @default("AVAILABLE") // "AVAILABLE" | "BOOKED" | "MAINTENANCE"
+  bookingRooms  BookingRoom[]
+  images        Gallery[]
+  facilities    Facility[]     @relation("RoomFacilities")
+  amenities     Amenity[]      @relation("RoomAmenities")
+  reviews       Review[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Booking {
+  id           String         @id @default(uuid())
+  userId       String
+  user         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  checkInDate  DateTime
+  checkOutDate DateTime
+  totalPrice   Float
+  status       String         @default("PENDING") // "PENDING" | "CONFIRMED" | "CANCELLED"
+  bookingRooms BookingRoom[]
+  payment      Payment?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model BookingRoom {
+  id        String   @id @default(uuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  roomId    String
+  room      Room     @relation(fields: [roomId], references: [id])
+  price     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Payment {
+  id            String   @id @default(uuid())
+  bookingId     String   @unique
+  booking       Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  amount        Float
+  status        String   @default("PENDING") // "PENDING" | "COMPLETED" | "FAILED"
+  method        String
+  transactionId String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roomId    String
+  room      Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Gallery {
+  id        String   @id @default(uuid())
+  url       String
+  caption   String?
+  roomId    String?
+  room      Room?    @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Promotion {
+  id              String   @id @default(uuid())
+  code            String   @unique
+  discountPercent Float
+  startDate       DateTime
+  endDate         DateTime
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Facility {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  icon        String?
+  rooms       Room[]   @relation("RoomFacilities")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Amenity {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  icon        String?
+  rooms       Room[]   @relation("RoomAmenities")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
