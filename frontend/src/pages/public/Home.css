@@ -1,0 +1,363 @@
+.gv-home {
+  overflow: hidden;
+}
+
+.gv-home-intro {
+  padding-top: 145px;
+}
+
+.gv-intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 100px;
+}
+
+.gv-intro-image {
+  position: relative;
+  padding: 0 45px 45px 0;
+}
+
+.gv-intro-image::after {
+  content: "";
+
+  position: absolute;
+  top: 45px;
+  right: 0;
+  bottom: 0;
+  left: 45px;
+
+  border: 1px solid var(--gv-gold-light);
+
+  z-index: -1;
+}
+
+.gv-intro-image img {
+  width: 100%;
+  height: 610px;
+  object-fit: cover;
+}
+
+.gv-intro-experience {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  min-width: 225px;
+  padding: 26px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  background: var(--gv-green);
+  color: var(--gv-white);
+}
+
+.gv-intro-experience strong {
+  color: var(--gv-gold-light);
+
+  font-family: var(--gv-serif);
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.gv-intro-experience span {
+  font-size: 11px;
+  line-height: 1.55;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gv-intro-content .gv-description + .gv-description {
+  margin-top: 12px;
+}
+
+.gv-home-text-link {
+  width: fit-content;
+  margin-top: 35px;
+  padding-bottom: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  border-bottom: 1px solid var(--gv-gold);
+
+  color: var(--gv-green);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gv-home-text-link span {
+  color: var(--gv-gold);
+  font-size: 18px;
+}
+
+.gv-home-benefits {
+  padding: 45px 0;
+  background: var(--gv-green);
+}
+
+.gv-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gv-benefits-grid article {
+  padding: 10px 40px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+
+  color: var(--gv-white);
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.gv-benefits-grid article:first-child {
+  padding-left: 0;
+}
+
+.gv-benefits-grid article:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.gv-benefits-grid article > span {
+  color: var(--gv-gold-light);
+
+  font-family: var(--gv-serif);
+  font-size: 29px;
+}
+
+.gv-benefits-grid h3 {
+  margin-bottom: 9px;
+
+  font-family: var(--gv-serif);
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.gv-benefits-grid p {
+  color: rgba(255, 255, 255, 0.66);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.gv-home-offer {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--gv-white);
+}
+
+.gv-home-offer-image {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/hero/villa-hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.gv-home-offer-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(20, 37, 31, 0.88),
+    rgba(20, 37, 31, 0.45),
+    rgba(20, 37, 31, 0.05)
+  );
+}
+
+.gv-home-offer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.gv-home-offer-content h2 {
+  max-width: 720px;
+
+  font-family: var(--gv-serif);
+  font-size: clamp(45px, 6vw, 78px);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.gv-home-offer-content p {
+  max-width: 510px;
+  margin: 25px 0 35px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.gv-home-newsletter {
+  padding: 85px 0;
+  background: var(--gv-green-dark);
+  color: var(--gv-white);
+}
+
+.gv-newsletter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.gv-newsletter-container h2 {
+  font-family: var(--gv-serif);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.gv-newsletter-form {
+  width: min(100%, 470px);
+
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.gv-newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  height: 58px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: var(--gv-white);
+}
+
+.gv-newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.gv-newsletter-form button {
+  padding: 0 5px 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border: none;
+  background: transparent;
+  color: var(--gv-gold-light);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gv-newsletter-form button span {
+  font-size: 18px;
+}
+
+@media (max-width: 950px) {
+  .gv-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .gv-intro-image {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .gv-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gv-benefits-grid article,
+  .gv-benefits-grid article:first-child,
+  .gv-benefits-grid article:last-child {
+    padding: 24px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .gv-benefits-grid article:last-child {
+    border-bottom: none;
+  }
+
+  .gv-newsletter-container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .gv-home-intro {
+    padding-top: 100px;
+  }
+
+  .gv-intro-image {
+    padding: 0 18px 30px 0;
+  }
+
+  .gv-intro-image::after {
+    top: 20px;
+    left: 20px;
+  }
+
+  .gv-intro-image img {
+    height: 430px;
+  }
+
+  .gv-intro-experience {
+    min-width: 195px;
+    padding: 20px;
+  }
+
+  .gv-intro-experience strong {
+    font-size: 34px;
+  }
+
+  .gv-home-offer {
+    min-height: 580px;
+  }
+
+  .gv-home-offer-image {
+    background-attachment: scroll;
+    background-position: 65% center;
+  }
+
+  .gv-home-newsletter {
+    padding: 70px 0;
+  }
+
+  .gv-newsletter-form {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .gv-newsletter-form input {
+    width: 100%;
+    padding: 0 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .gv-newsletter-form button {
+    width: fit-content;
+    min-height: 50px;
+    padding-left: 0;
+  }
+}

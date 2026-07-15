@@ -1,0 +1,147 @@
+.gv-booking-wrapper {
+  position: relative;
+  z-index: 5;
+
+  width: min(1180px, calc(100% - 40px));
+  margin: -55px auto 0;
+}
+
+.gv-booking-bar {
+  min-height: 110px;
+  padding: 24px 28px;
+
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+
+  background: var(--gv-white);
+  box-shadow: 0 25px 65px rgba(20, 37, 31, 0.17);
+}
+
+.gv-booking-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.gv-booking-heading span {
+  color: var(--gv-gold);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.gv-booking-heading strong {
+  color: var(--gv-green);
+
+  font-family: var(--gv-serif);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.gv-booking-field {
+  padding-left: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  border-left: 1px solid var(--gv-border);
+}
+
+.gv-booking-field span {
+  color: var(--gv-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.gv-booking-field input,
+.gv-booking-field select {
+  width: 100%;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: var(--gv-green);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gv-booking-submit {
+  height: 62px;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  border: none;
+  background: var(--gv-green);
+  color: var(--gv-white);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition: background 0.25s ease;
+}
+
+.gv-booking-submit:hover {
+  background: var(--gv-gold);
+}
+
+.gv-booking-submit span {
+  font-size: 18px;
+}
+
+@media (max-width: 1000px) {
+  .gv-booking-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gv-booking-heading {
+    grid-column: 1 / -1;
+  }
+
+  .gv-booking-submit {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .gv-booking-wrapper {
+    width: calc(100% - 28px);
+    margin-top: -25px;
+  }
+
+  .gv-booking-bar {
+    padding: 26px 20px;
+
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .gv-booking-heading,
+  .gv-booking-submit {
+    grid-column: auto;
+  }
+
+  .gv-booking-field {
+    padding: 0 0 15px;
+    border-left: none;
+    border-bottom: 1px solid var(--gv-border);
+  }
+
+  .gv-booking-submit {
+    width: 100%;
+  }
+}

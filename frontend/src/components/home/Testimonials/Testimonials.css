@@ -1,0 +1,125 @@
+.gv-testimonials {
+  padding: 115px 0;
+  background: var(--gv-cream);
+}
+
+.gv-testimonials-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.gv-testimonial-content {
+  position: relative;
+  padding-left: 55px;
+  border-left: 1px solid rgba(187, 149, 82, 0.55);
+}
+
+.gv-testimonial-mark {
+  color: var(--gv-gold-light);
+
+  font-family: var(--gv-serif);
+  font-size: 110px;
+  line-height: 0.5;
+}
+
+.gv-testimonial-content blockquote {
+  margin-top: 30px;
+
+  color: var(--gv-green);
+
+  font-family: var(--gv-serif);
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.45;
+}
+
+.gv-testimonial-author {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gv-testimonial-author strong {
+  color: var(--gv-green);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gv-testimonial-author span {
+  color: var(--gv-muted);
+  font-size: 12px;
+}
+
+.gv-testimonial-controls {
+  margin-top: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gv-testimonial-controls button {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid var(--gv-border);
+  background: transparent;
+  color: var(--gv-green);
+
+  font-size: 18px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.gv-testimonial-controls button:hover {
+  background: var(--gv-green);
+  color: var(--gv-white);
+}
+
+.gv-testimonial-controls > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--gv-muted);
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.gv-testimonial-controls i {
+  width: 38px;
+  height: 1px;
+  background: var(--gv-gold);
+}
+
+@media (max-width: 850px) {
+  .gv-testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .gv-testimonial-content {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .gv-testimonials {
+    padding: 75px 0;
+  }
+
+  .gv-testimonial-content {
+    padding-left: 20px;
+  }
+
+  .gv-testimonial-mark {
+    font-size: 80px;
+  }
+}

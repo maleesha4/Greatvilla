@@ -1,68 +1,180 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+
+import Hero from "../../components/home/Hero/Hero";
+import BookingBar from "../../components/home/BookingBar/BookingBar";
+import FeaturedRooms from "../../components/home/FeaturedRooms/FeaturedRooms";
+import Facilities from "../../components/home/Facilities/Facilities";
+import Gallery from "../../components/home/Gallery/Gallery";
+import Testimonials from "../../components/home/Testimonials/Testimonials";
+
+import "./Home.css";
 
 const Home: React.FC = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '80px', paddingBottom: '80px' }}>
-      {/* Hero Section */}
-      <section style={{
-        position: 'relative',
-        height: '75vh',
-        minHeight: '500px',
-        display: 'flex',
-        alignItems: 'center',
-        background: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("/images/villa_hero.webp") no-repeat center center / cover',
-        padding: '0 20px'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-          <div style={{ maxWidth: '650px' }}>
-            <span style={{ color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', fontSize: '0.85rem', fontWeight: 'bold' }}>Premium Villa Experience</span>
-            <h1 className="gradient-text" style={{ fontSize: '4rem', fontWeight: '800', lineHeight: '1.2', margin: '15px 0 25px 0' }}>
-              Your Private Paradise Awaits
-            </h1>
-            <p style={{ color: 'var(--text-gray)', fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '35px' }}>
-              Immerse yourself in unrivaled elegance. Experience private pools, personal wellness spas, and breathtaking views at Greatvilla.
-            </p>
-            <div style={{ display: 'flex', gap: '20px' }}>
-              <Link to="/rooms" className="btn btn-primary" style={{ padding: '14px 28px', fontSize: '1rem' }}>
-                Explore Rooms
-              </Link>
-              <Link to="/about" className="btn btn-outline" style={{ padding: '14px 28px', fontSize: '1rem' }}>
-                Learn More
-              </Link>
+    <div className="gv-home">
+      <Hero />
+
+      <BookingBar />
+
+      <section className="gv-section gv-home-intro">
+        <div className="gv-container gv-intro-grid">
+          <div className="gv-intro-image">
+            <img
+              src="/images/home/about-villa.webp"
+              alt="GreatVilla luxury villa"
+            />
+
+            <div className="gv-intro-experience">
+              <strong>06+</strong>
+              <span>
+                Years of
+                <br />
+                warm hospitality
+              </span>
             </div>
+          </div>
+
+          <div className="gv-intro-content">
+            <span className="gv-eyebrow">
+              Welcome to GreatVilla
+            </span>
+
+            <h2 className="gv-title">
+              A luxury retreat
+              <br />
+              inspired by nature
+            </h2>
+
+            <p className="gv-description">
+              GreatVilla is a private sanctuary created for
+              guests seeking tranquillity, refined comfort and
+              meaningful experiences. Thoughtfully designed
+              spaces, tropical landscapes and personalised
+              service make every stay feel exceptional.
+            </p>
+
+            <p className="gv-description">
+              From peaceful mornings beside the pool to
+              private dining beneath the stars, every moment
+              is shaped around your comfort.
+            </p>
+
+            <Link
+              to="/about"
+              className="gv-home-text-link"
+            >
+              Discover Our Story
+              <span>→</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Featured Grid Section */}
-      <section className="container">
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <span style={{ color: 'var(--primary)', fontSize: '0.85rem', letterSpacing: '0.15em', fontWeight: 'bold', textTransform: 'uppercase' }}>Exclusive Amenities</span>
-          <h2 style={{ fontSize: '2.5rem', marginTop: '10px' }}>Indulge in Premium Luxury</h2>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
-          {[
-            { title: 'Infinity Heated Pool', desc: 'Overlook raw nature in our temperature-controlled pool lines.' },
-            { title: 'Custom Wellness Spa', desc: 'Soothe your body with massages, custom scrubs and professional aromatherapies.' },
-            { title: 'Fine Dining Restaurant', desc: 'Taste local ingredients curated by premium chefs matching global palates.' },
-            { title: 'Personal Butler Service', desc: 'Access 24/7 dedicated service to make your retreat smooth and memorable.' }
-          ].map((item, idx) => (
-            <div key={idx} className="glass hover-scale" style={{ padding: '30px', borderRadius: '12px' }}>
-              <h3 style={{ color: 'var(--primary)', fontSize: '1.3rem', marginBottom: '15px' }}>{item.title}</h3>
-              <p style={{ color: 'var(--text-gray)', fontSize: '0.95rem', lineHeight: '1.6' }}>{item.desc}</p>
+      <section className="gv-home-benefits">
+        <div className="gv-container gv-benefits-grid">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Best Rate Guarantee</h3>
+              <p>
+                Enjoy our best available rates when booking
+                directly with GreatVilla.
+              </p>
             </div>
-          ))}
+          </article>
+
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Flexible Reservations</h3>
+              <p>
+                Plan with confidence using flexible booking
+                and cancellation options.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Personalised Service</h3>
+              <p>
+                Our villa team is available to create a stay
+                tailored around your needs.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="container">
-        <div className="glass" style={{ padding: '60px 40px', borderRadius: '16px', textAlign: 'center' }}>
-          <p style={{ fontSize: '1.5rem', fontStyle: 'italic', color: 'var(--text-light)', lineHeight: '1.7', maxWidth: '800px', margin: '0 auto 30px auto' }}>
-            "Our stay at Greatvilla was absolutely stellar. The room service, ambient heated pools, and the quiet spa rooms were beyond anything we had ever experienced."
+      <FeaturedRooms />
+
+      <section className="gv-home-offer">
+        <div className="gv-home-offer-image"></div>
+        <div className="gv-home-offer-overlay"></div>
+
+        <div className="gv-container gv-home-offer-content">
+          <span className="gv-eyebrow">
+            Exclusive villa offer
+          </span>
+
+          <h2>
+            Stay three nights
+            <br />
+            and enjoy one more
+          </h2>
+
+          <p>
+            Extend your GreatVilla escape with a complimentary
+            additional night and a private dining experience.
           </p>
-          <span style={{ color: 'var(--primary)', fontWeight: 'bold', fontSize: '1.1rem' }}>— Sarah & David Mitchell</span>
+
+          <Link
+            to="/rooms"
+            className="gv-btn gv-btn-primary"
+          >
+            View Special Offer
+          </Link>
+        </div>
+      </section>
+
+      <Facilities />
+
+      <Gallery />
+
+      <Testimonials />
+
+      <section className="gv-home-newsletter">
+        <div className="gv-container gv-newsletter-container">
+          <div>
+            <span className="gv-eyebrow">
+              Stay inspired
+            </span>
+
+            <h2>
+              Receive stories, offers
+              <br />
+              and villa updates
+            </h2>
+          </div>
+
+          <form
+            className="gv-newsletter-form"
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              aria-label="Email address"
+              required
+            />
+
+            <button type="submit">
+              Subscribe
+              <span>→</span>
+            </button>
+          </form>
         </div>
       </section>
     </div>

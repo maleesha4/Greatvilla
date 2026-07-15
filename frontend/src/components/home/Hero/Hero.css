@@ -1,0 +1,213 @@
+.gv-hero {
+  position: relative;
+
+  height: 100vh;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  color: var(--gv-white);
+}
+
+.gv-hero-background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/hero/villa-hero.webp");
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.03);
+
+  animation: gv-hero-zoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes gv-hero-zoom {
+  from {
+    transform: scale(1.03);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.gv-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 22, 17, 0.72) 0%,
+      rgba(9, 22, 17, 0.4) 48%,
+      rgba(9, 22, 17, 0.12) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(9, 22, 17, 0.52),
+      transparent 55%
+    );
+}
+
+.gv-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 40px));
+  margin: 70px auto 0;
+}
+
+.gv-hero-kicker {
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: var(--gv-gold-light);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.gv-hero-kicker::before {
+  content: "";
+  width: 54px;
+  height: 1px;
+  background: currentColor;
+}
+
+.gv-hero h1 {
+  max-width: 900px;
+
+  font-family: var(--gv-serif);
+  font-size: clamp(54px, 7vw, 105px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.gv-hero h1 em {
+  color: var(--gv-gold-light);
+  font-weight: 400;
+}
+
+.gv-hero-description {
+  max-width: 580px;
+  margin-top: 30px;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.gv-hero-actions {
+  margin-top: 38px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gv-hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 35px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  transform: translateX(-50%);
+}
+
+.gv-hero-scroll i {
+  width: 1px;
+  height: 48px;
+
+  display: block;
+
+  background: linear-gradient(
+    to bottom,
+    var(--gv-gold-light),
+    transparent
+  );
+
+  animation: gv-scroll-line 1.8s infinite;
+}
+
+@keyframes gv-scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  51% {
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@media (max-width: 768px) {
+  .gv-hero {
+    min-height: 650px;
+  }
+
+  .gv-hero-background {
+    background-position: 62% center;
+  }
+
+  .gv-hero-content {
+    width: calc(100% - 30px);
+    margin-top: 45px;
+  }
+
+  .gv-hero-kicker {
+    letter-spacing: 0.18em;
+  }
+
+  .gv-hero-kicker::before {
+    width: 28px;
+  }
+
+  .gv-hero-description {
+    max-width: 430px;
+    font-size: 15px;
+  }
+
+  .gv-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gv-hero-actions .gv-btn {
+    width: min(100%, 280px);
+  }
+
+  .gv-hero-scroll {
+    display: none;
+  }
+}
