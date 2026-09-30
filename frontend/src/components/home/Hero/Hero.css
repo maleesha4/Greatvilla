@@ -1,0 +1,47 @@
+.gv-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 14, 8, 0.75) 0%,
+      rgba(20, 14, 8, 0.4) 50%,
+      rgba(20, 14, 8, 0.1) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(20, 14, 8, 0.55),
+      transparent 55%
+    );
+}
+
+.gv-hero-kicker {
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: #f5c76b;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.gv-hero h1 em {
+  color: #f5c76b;
+  font-weight: 400;
+}
+
+.gv-hero-description {
+  max-width: 580px;
+  margin-top: 30px;
+
+  color: #fff4e0;
+
+  font-size: 17px;
+  line-height: 1.85;
+}
